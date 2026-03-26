@@ -5,46 +5,40 @@
 class GhFollow < Formula
   desc "A GitHub CLI extension to manage your follow list from the terminal"
   homepage "https://github.com/h1s97x/gh-follow"
-  version "1.0.0"
+  version "1.0.1"
 
   on_macos do
-    on_intel do
-      url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.0/gh-follow_1.0.0_darwin_amd64.tar.gz"
-      sha256 "5183abaca81d41c048c07bb68c481f8f1bcc337b1e108ed5583363173fcf87f8"
+    if Hardware::CPU.intel?
+      url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.1/gh-follow_1.0.1_darwin_amd64.tar.gz"
+      sha256 "75854ce0aa6ffac530d3c7bc6636ce9489d11da1c12247fc8b56c256b8785ac1"
 
-      def install
+      define_method(:install) do
         bin.install "gh-follow"
       end
     end
-    on_arm do
-      url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.0/gh-follow_1.0.0_darwin_arm64.tar.gz"
-      sha256 "4d4f3cc515cc476324ea7b8db8304a0303cb12c8baa220d31883c9a6e4c2ce6f"
+    if Hardware::CPU.arm?
+      url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.1/gh-follow_1.0.1_darwin_arm64.tar.gz"
+      sha256 "f264107e7d475a0f95edb13212f59dffe3d25238fb6d1997754659de9aa24276"
 
-      def install
+      define_method(:install) do
         bin.install "gh-follow"
       end
     end
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.0/gh-follow_1.0.0_linux_amd64.tar.gz"
-        sha256 "52ac6372e7a0dbb844d0371d3a783a932678a5176ea055d5f3522a801fdaf2d7"
-
-        def install
-          bin.install "gh-follow"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.1/gh-follow_1.0.1_linux_amd64.tar.gz"
+      sha256 "34934401f58dc074c6b4d167fa7cb873f67bfef1b2cce6f1d7b71c6c54949bdd"
+      define_method(:install) do
+        bin.install "gh-follow"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.0/gh-follow_1.0.0_linux_arm64.tar.gz"
-        sha256 "338a36a52b3d96d6c06ba266f8a8b900512dcdf09fefeefb0fb68871bfc12e97"
-
-        def install
-          bin.install "gh-follow"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.1/gh-follow_1.0.1_linux_arm64.tar.gz"
+      sha256 "95abc2c7eb6457c3cc31d8173a000b373cb19dba1149a070e095864863100618"
+      define_method(:install) do
+        bin.install "gh-follow"
       end
     end
   end
