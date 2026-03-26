@@ -10,7 +10,7 @@ class GhFollow < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.1/gh-follow_1.0.1_darwin_amd64.tar.gz"
-      sha256 "75854ce0aa6ffac530d3c7bc6636ce9489d11da1c12247fc8b56c256b8785ac1"
+      sha256 "29d228931b8ea5ae1b8ea53beca3419927f88779a8e0e5df55cd4ab0d941f529"
 
       define_method(:install) do
         bin.install "gh-follow"
@@ -18,7 +18,7 @@ class GhFollow < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.1/gh-follow_1.0.1_darwin_arm64.tar.gz"
-      sha256 "f264107e7d475a0f95edb13212f59dffe3d25238fb6d1997754659de9aa24276"
+      sha256 "0e36b2b0441a273c2863dc17006828f0f27086e077a510d2ca8d2fbac0815c78"
 
       define_method(:install) do
         bin.install "gh-follow"
@@ -29,14 +29,14 @@ class GhFollow < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.1/gh-follow_1.0.1_linux_amd64.tar.gz"
-      sha256 "34934401f58dc074c6b4d167fa7cb873f67bfef1b2cce6f1d7b71c6c54949bdd"
+      sha256 "7d03697ba46ea12071abdb06c275783e1fbc2379d23eac6991a8f7af4e3c566a"
       define_method(:install) do
         bin.install "gh-follow"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/h1s97x/gh-follow/releases/download/v1.0.1/gh-follow_1.0.1_linux_arm64.tar.gz"
-      sha256 "95abc2c7eb6457c3cc31d8173a000b373cb19dba1149a070e095864863100618"
+      sha256 "fb2297a4beb123389603ee5fe83efab35812314e44d0a8a16fdc7062382061e3"
       define_method(:install) do
         bin.install "gh-follow"
       end
